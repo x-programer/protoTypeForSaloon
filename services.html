@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Luxe Salon Services - Precision Cuts, Shaves, and Treatments. View our full menu and book your appointment.">
+    <title>Our Services | Luxe Salon</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Header / Navigation -->
+    <header class="site-header">
+        <div class="container header-container">
+            <div class="logo">LUXE SALON</div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="services.html" class="active">Services</a></li>
+                    <li><a href="index.html#gallery">Gallery</a></li>
+
+                    <li><a href="index.html#blog">Blog</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <a href="index.html#contact" class="btn btn-primary nav-btn">Book Now</a>
+            <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Dark Mode">
+                <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-width="2">
+                    <circle cx="12" cy="12" r="5"></circle>
+                    <line x1="12" y1="1" x2="12" y2="3"></line>
+                    <line x1="12" y1="21" x2="12" y2="23"></line>
+                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                    <line x1="1" y1="12" x2="3" y2="12"></line>
+                    <line x1="21" y1="12" x2="23" y2="12"></line>
+                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                </svg>
+                <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-width="2" style="display:none;">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                </svg>
+            </button>
+            <div class="mobile-menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Hero -->
+    <section class="services-hero">
+        <div class="hero-overlay"></div>
+        <div class="container hero-content">
+            <h1 class="load-fade-up">Our Services</h1>
+            <p class="load-fade-up delay-200">Expert care tailored to your style.</p>
+        </div>
+    </section>
+
+    <!-- Services Container -->
+    <section class="services-catalogue section-padding">
+        <div class="container">
+
+            <!-- Filters & Sort -->
+            <div class="catalogue-controls animate-on-scroll fade-up">
+                <div class="filter-chips">
+                    <button class="filter-chip active" data-filter="all">All</button>
+                    <button class="filter-chip" data-filter="Color">Color</button>
+                    <button class="filter-chip" data-filter="Styling">Styling</button>
+                    <button class="filter-chip" data-filter="Cut">Cuts</button>
+                    <button class="filter-chip" data-filter="Barber">Barber</button>
+                    <button class="filter-chip" data-filter="Treatment">Treatments</button>
+                    <button class="filter-chip" data-filter="Extensions">Extensions</button>
+                    <button class="filter-chip" data-filter="Other">Other</button>
+                </div>
+                <div class="sort-wrapper">
+                    <select id="sort-select" class="sort-select">
+                        <option value="default">Sort By</option>
+                        <option value="price-asc">Price: Low to High</option>
+                        <option value="price-desc">Price: High to Low</option>
+                        <option value="duration-asc">Duration: Shortest</option>
+                        <option value="duration-desc">Duration: Longest</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Grid -->
+            <div id="services-grid-dynamic" class="services-grid-dynamic">
+                <!-- Services will be loaded here via JS -->
+                <div class="loading-spinner">Loading services...</div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Booking Callout -->
+    <section class="section-padding bg-light text-center">
+        <div class="container animate-on-scroll fade-up">
+            <h2>Ready to look your best?</h2>
+            <p>Book your appointment today and experience the difference.</p>
+            <br>
+            <a href="index.html#contact" class="btn btn-primary">Book Appointment</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container text-center">
+            <div class="social-links">
+                <a href="#">Instagram</a>
+                <a href="#">Facebook</a>
+                <a href="#">Pinterest</a>
+            </div>
+            <p>&copy; 2025 Luxe Salon. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Sticky Bottom Nav for Mobile -->
+    <div class="mobile-bottom-nav">
+        <a href="tel:9617581181" class="nav-item">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path
+                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                </path>
+            </svg>
+        </a>
+        <a href="mailto:hello@luxesalon.com" class="nav-item">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                <polyline points="22,6 12,13 2,6"></polyline>
+            </svg>
+        </a>
+        <a href="index.html#contact" class="nav-item">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                <line x1="16" y1="2" x2="16" y2="6"></line>
+                <line x1="8" y1="2" x2="8" y2="6"></line>
+                <line x1="3" y1="10" x2="21" y2="10"></line>
+                <path d="M8 14h.01"></path>
+                <path d="M12 14h.01"></path>
+                <path d="M16 14h.01"></path>
+                <path d="M8 18h.01"></path>
+                <path d="M12 18h.01"></path>
+                <path d="M16 18h.01"></path>
+            </svg>
+        </a>
+    </div>
+
+    <!-- Service Modal -->
+    <div id="service-modal" class="modal-backdrop" aria-hidden="true">
+        <div class="modal-content" role="dialog" aria-modal="true">
+            <button class="modal-close" aria-label="Close modal">&times;</button>
+            <div class="modal-body">
+                <div class="modal-image">
+                    <img id="modal-img" src="" alt="Service Image">
+                </div>
+                <div class="modal-details">
+                    <span id="modal-category" class="modal-category">Category</span>
+                    <h2 id="modal-title">Service Title</h2>
+                    <div class="modal-meta">
+                        <span id="modal-duration" class="meta-item"><span class="icon">⏱</span> <span class="val">45
+                                min</span></span>
+                        <span id="modal-price" class="meta-item"><span class="icon">💲</span> <span
+                                class="val">$50</span></span>
+                    </div>
+                    <p id="modal-desc">Description goes here.</p>
+                    <a href="index.html#contact" id="modal-cta" class="btn btn-primary btn-block">Book This Service</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+</body>
+
+</html>
