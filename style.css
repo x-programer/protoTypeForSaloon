@@ -1396,6 +1396,79 @@ body.dark-mode .btn-primary {
         max-width: 100%;
     }
 
+    /* ==========================================
+       MOBILE PERFORMANCE PATCH - 60fps Scrolling
+       Disable heavy GPU effects on mobile devices
+       ========================================== */
+
+    /* 1. DISABLE BACKDROP-FILTER BLUR - Major GPU bottleneck on mobile */
+    .site-header {
+        backdrop-filter: none !important;
+        -webkit-backdrop-filter: none !important;
+        /* Use solid background instead of glassmorphism */
+        background: rgba(255, 255, 255, 0.95) !important;
+    }
+
+    body.dark-mode .site-header {
+        background: rgba(20, 20, 20, 0.95) !important;
+    }
+
+    /* Disable blur on mobile nav */
+    .main-nav {
+        backdrop-filter: none !important;
+        -webkit-backdrop-filter: none !important;
+        background: rgba(20, 20, 20, 0.98) !important;
+    }
+
+    /* Disable blur on mobile bottom nav */
+    .mobile-bottom-nav {
+        backdrop-filter: none !important;
+        -webkit-backdrop-filter: none !important;
+        background: rgba(255, 255, 255, 0.95) !important;
+    }
+
+    body.dark-mode .mobile-bottom-nav {
+        background: rgba(20, 20, 20, 0.95) !important;
+    }
+
+    /* Disable blur on buttons */
+    .btn {
+        backdrop-filter: none !important;
+        -webkit-backdrop-filter: none !important;
+    }
+
+    /* 2. DISABLE background-attachment: fixed - Causes massive repaints */
+    .services-hero {
+        background-attachment: scroll !important;
+    }
+
+    /* Reduce modal blur */
+    .modal-backdrop {
+        backdrop-filter: none !important;
+    }
+
+    .modal-close {
+        backdrop-filter: none !important;
+    }
+
+    /* 3. REDUCE EXPENSIVE TRANSFORM/SCALE EFFECTS */
+    /* Keep basic functionality but disable expensive hover transforms */
+    .service-card:hover {
+        transform: translateY(-5px) !important;
+    }
+
+    .gallery-item:hover {
+        transform: scale(1.02) !important;
+    }
+
+    /* Disable 3D transforms on animated elements */
+    .animate-on-scroll {
+        will-change: auto !important;
+    }
+
+    /* ========================================== */
+
+
     .main-nav {
         display: none;
         position: absolute;

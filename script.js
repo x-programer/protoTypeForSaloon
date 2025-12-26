@@ -124,6 +124,15 @@ document.addEventListener('DOMContentLoaded', () => {
         initServicesPage(servicesGrid);
     }
 
+    // MOBILE PERFORMANCE: Disable video autoplay on mobile to save bandwidth and GPU
+    const heroVideo = document.getElementById('hero-video');
+    if (heroVideo && window.matchMedia("(max-width: 768px)").matches) {
+        heroVideo.pause();
+        heroVideo.removeAttribute('autoplay');
+        heroVideo.style.display = 'none'; // Use poster background image instead
+        console.log('Hero video disabled on mobile for performance');
+    }
+
     console.log("Luxe Salon website loaded.");
 });
 
@@ -777,6 +786,12 @@ function initServicesPage(gridElement) {
 
 // macOS Dock Magnification Effect
 function initDockMagnification() {
+    // MOBILE PERFORMANCE PATCH: Skip on touch devices to prevent layout thrashing
+    if (window.matchMedia("(hover: none)").matches) {
+        console.log('Dock magnification disabled on touch device for performance');
+        return;
+    }
+
     const grid = document.querySelector('.services-grid');
     const cards = document.querySelectorAll('.service-card');
 
@@ -833,6 +848,12 @@ document.addEventListener('DOMContentLoaded', initDockMagnification);
 
 // Gallery Magnification Effect (macOS Dock Style)
 function initGalleryMagnification() {
+    // MOBILE PERFORMANCE PATCH: Skip on touch devices to prevent layout thrashing
+    if (window.matchMedia("(hover: none)").matches) {
+        console.log('Gallery magnification disabled on touch device for performance');
+        return;
+    }
+
     const grid = document.querySelector('.gallery-grid');
     const items = document.querySelectorAll('.gallery-item');
 
